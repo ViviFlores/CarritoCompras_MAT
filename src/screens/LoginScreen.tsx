@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StatusBar, Text, View } from 'react-native';
+import { Alert, StatusBar, Text, View } from 'react-native';
 import { TitleComponent } from '../components/TitleComponent';
 import { PRIMARY_COLOR } from '../commons/constants';
 import { BodyComponent } from '../components/BodyComponent';
@@ -20,6 +20,8 @@ export const LoginScreen = () => {
         email: '',
         password: ''
     });
+    //hook useState: permitir que se haga visible/no visible el contenido del password
+    const [hiddenPaswword, setHiddenPaswword] = useState<boolean>(true);
 
     //función para actualizar el estado del formulario
     const handleSetValues = (name: string, value: string) => {
@@ -43,8 +45,17 @@ export const LoginScreen = () => {
                     <Text style={styles.textBody}>Realiza tus compras de manera rápida y segura</Text>
                 </View>
                 <View style={styles.contentInput}>
-                    <InputComponent placeholder='Correo' handleSetValues={handleSetValues} name='email' />
-                    <InputComponent placeholder='Contraseña' handleSetValues={handleSetValues} name='password' />
+                    <InputComponent
+                        placeholder='Correo'
+                        handleSetValues={handleSetValues}
+                        name='email' />
+                    <InputComponent
+                        placeholder='Contraseña'
+                        handleSetValues={handleSetValues}
+                        name='password'
+                        isPassword={hiddenPaswword}
+                        hasIcon={true}
+                        setHiddenPaswword={() => setHiddenPaswword(!hiddenPaswword)} />
                 </View>
                 <ButtonComponent textButton='Iniciar' onPress={handleSignIn} />
             </BodyComponent>

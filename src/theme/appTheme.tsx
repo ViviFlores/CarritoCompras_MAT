@@ -46,5 +46,11 @@ export const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
         textAlign: 'center'
+    },
+    iconPassword:{
+        position:'absolute',
+        right:20,
+        zIndex:1, 
+        marginTop:10
     }
 });
