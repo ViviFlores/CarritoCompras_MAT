@@ -52,5 +52,12 @@ export const styles = StyleSheet.create({
         right:20,
         zIndex:1, 
         marginTop:10
+    },
+    textRedirection:{
+        marginTop:30,
+        fontSize:16,
+        color:PRIMARY_COLOR,
+        fontWeight:'bold',
+        textAlign:'center'
     }
 });
