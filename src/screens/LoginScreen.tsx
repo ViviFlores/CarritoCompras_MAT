@@ -6,6 +6,13 @@ import { BodyComponent } from '../components/BodyComponent';
 import { styles } from '../theme/appTheme';
 import { InputComponent } from '../components/InputComponent';
 import { ButtonComponent } from '../components/ButtonComponent';
+import { CommonActions, useNavigation } from '@react-navigation/native';
+import { User } from '../navigator/StackNavigator';
+
+//interface - props
+interface Props {
+    users: User[]
+}
 
 //interface - objeto
 interface FormLogin {
@@ -13,28 +20,17 @@ interface FormLogin {
     password: string;
 }
 
-//interface - arreglo objetos
-interface User {
-    id: number;
-    email: string;
-    password: string;
-}
-
-export const LoginScreen = () => {
-
-    //arreglo con los usuarios para iniciar sesión
-    const users: User[] = [
-        { id: 1, email: 'vflores@gmail.com', password: '123456' },
-        { id: 2, email: 'caguas@gmail.com', password: '1234567' }
-    ];
-
+export const LoginScreen = ({ users }: Props) => {
     //hook useState: manipular el estado del formulario
     const [formLogin, setFormLogin] = useState<FormLogin>({
         email: '',
         password: ''
     });
     //hook useState: permitir que se haga visible/no visible el contenido del password
-    const [hiddenPaswword, setHiddenPaswword] = useState<boolean>(true);
+    const [hiddenPassword, setHiddenPassword] = useState<boolean>(true);
+
+    //hook useNavigation(): navega de una pantalla a otra
+    const navigation = useNavigation();
 
     //función para actualizar el estado del formulario
     const handleSetValues = (name: string, value: string) => {
@@ -88,12 +84,13 @@ export const LoginScreen = () => {
                         placeholder='Contraseña'
                         handleSetValues={handleSetValues}
                         name='password'
-                        isPassword={hiddenPaswword}
+                        isPassword={hiddenPassword}
                         hasIcon={true}
-                        setHiddenPaswword={() => setHiddenPaswword(!hiddenPaswword)} />
+                        setHiddenPaswword={() => setHiddenPassword(!hiddenPassword)} />
                 </View>
                 <ButtonComponent textButton='Iniciar' onPress={handleSignIn} />
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'Register' }))}>
                     <Text style={styles.textRedirection}>No tienes una cuenta? Regístrate ahora</Text>
                 </TouchableOpacity>
             </BodyComponent>
