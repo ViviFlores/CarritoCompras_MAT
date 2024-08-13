@@ -57,7 +57,10 @@ export const LoginScreen = ({ users }: Props) => {
             );
             return;
         }
-        console.log(formLogin);
+        //Si inicio sesión sin problemas, vamos al Home Screen
+        navigation.dispatch(CommonActions.navigate({ name: 'Home' }));
+        //console.log(formLogin);
+
     }
 
     //función verificar si existe el correo y contraseña (usuario)
