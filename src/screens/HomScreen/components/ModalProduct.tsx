@@ -30,6 +30,8 @@ export const ModalProduct = ({ isVisible, setShowModal, product, changeStockProd
     const handleAddProduct = () => {
         //Actualizando el stock
         changeStockProduct(product.id, quantity);
+        //Inicializar la cantidad
+        setQuantity(1);
         //Cerrar el modal
         setShowModal();
     }
@@ -85,6 +87,7 @@ export const ModalProduct = ({ isVisible, setShowModal, product, changeStockProd
                                     </Text>
                                 </View>
                                 <TouchableOpacity
+                                    onPress={handleAddProduct}
                                     style={styles.buttonAddCar}>
                                     <Text style={styles.textButtonAddCar}>Agregar Carrito</Text>
                                 </TouchableOpacity>

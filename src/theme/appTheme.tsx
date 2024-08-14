@@ -157,6 +157,32 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#a92424',
         textAlign: 'center'
+    },
+    contentHeaderHome: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    iconCardHome: {
+        flex: 1,
+        alignItems: 'flex-end',
+        paddingHorizontal: 33
+    },
+    textIconCard: {
+        backgroundColor: SECUNDARY_COLOR,
+        borderRadius: 20,
+        paddingHorizontal: 5,
+        fontSize: 13,
+        fontWeight: 'bold'
+    },
+    headerTable: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    headerInformation: {
+        flexDirection: 'row',
+    },
+    textInformation: {
+        marginHorizontal: 10
     }
 
 });
