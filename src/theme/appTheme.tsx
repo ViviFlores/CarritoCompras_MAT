@@ -113,9 +113,6 @@ export const styles = StyleSheet.create({
         color: '#000',
         fontWeight: 'bold'
     },
-    contentBodyModal: {
-        alignItems: 'center'
-    },
     imageModal: {
         width: 200,
         height: 200,
@@ -141,7 +138,25 @@ export const styles = StyleSheet.create({
     },
     textQuantity: {
         fontSize: 20,
-        color: '#000'
+        color: '#000',
+        textAlign: 'center'
+    },
+    buttonAddCar: {
+        marginTop: 15,
+        backgroundColor: PRIMARY_COLOR,
+        borderRadius: 5,
+        paddingVertical: 10,
+        alignItems: 'center'
+    },
+    textButtonAddCar: {
+        color: SECUNDARY_COLOR,
+        fontWeight: 'bold'
+    },
+    messageStock: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#a92424',
+        textAlign: 'center'
     }
 
 });
