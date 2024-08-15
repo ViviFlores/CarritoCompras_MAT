@@ -182,7 +182,13 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     textInformation: {
-        marginHorizontal: 10
+        fontWeight: 'bold',
+        color: '#000'
+    },
+    textTotalPay: {
+        marginTop: 7,
+        fontSize: 16,
+        fontWeight: 'bold'
     }
 
 });
