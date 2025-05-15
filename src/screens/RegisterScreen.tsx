@@ -110,7 +110,7 @@ export const RegisterScreen = ({ users, handleAddUser }: Props) => {
                         hasIcon={true}
                         setHiddenPaswword={() => setHiddenPassword(!hiddenPassword)} />
                 </View>
-                <ButtonComponent textButton='Registrar' onPress={handleSignUp} />
+                <ButtonComponent textButton='Registrar Git' onPress={handleSignUp} />
                 <TouchableOpacity
                     onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'Login' }))}>
                     <Text style={styles.textRedirection}>Ya tienes una cuenta? Inciar sesión ahora</Text>
