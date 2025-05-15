@@ -75,7 +75,7 @@ export const LoginScreen = ({ users }: Props) => {
             <TitleComponent title='Iniciar Sesión Editado' />
             <BodyComponent>
                 <View>
-                    <Text style={styles.titleHeaderBody}>Bienvenido de nuevo!</Text>
+                    <Text style={styles.titleHeaderBody}>Bienvenido de nuevo Katty</Text>
                     <Text style={styles.textBody}>Realiza tus compras de manera rápida y segura</Text>
                 </View>
                 <View style={styles.contentInput}>
@@ -91,7 +91,7 @@ export const LoginScreen = ({ users }: Props) => {
                         hasIcon={true}
                         setHiddenPaswword={() => setHiddenPassword(!hiddenPassword)} />
                 </View>
-                <ButtonComponent textButton='Iniciar' onPress={handleSignIn} />
+                <ButtonComponent textButton='Iniciar Prueba' onPress={handleSignIn} />
                 <TouchableOpacity
                     onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'Register' }))}>
                     <Text style={styles.textRedirection}>No tienes una cuenta? Regístrate ahora</Text>
